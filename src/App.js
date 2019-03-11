@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ValidationComponent from './components/ValidationComponent'
 import './App.css';
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
         <header className="App-header">
           <input type="text" onChange={this.onChangeHandler} />
           <p>The input is {this.state.inputLength} characters!</p>
+          <ValidationComponent inputLength={this.state.inputLength} />
         </header>
       </div>
     );
