@@ -3,17 +3,15 @@ import React from 'react'
 const charComponent = (props) => {
   const style = {
     display: 'inline-block',
-    padding: '16px',
+    padding: '1%',
     textAlign: 'center',
-    margin: '16px',
-    border: '1px solid black'
+    margin: '1%',
+    border: '1px solid black',
+    color: 'white',
+    background: 'rgba(0,0,0,0.3)'
   }
 
-  return (
-    <div>
-      <span style={style} onClick={props.deleteChar}>{props.char}</span>
-    </div>
-  )
+  return <span style={style} onClick={props.deleteChar}>{props.char}</span>
 }
 
 export default charComponent

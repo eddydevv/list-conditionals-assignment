@@ -23,7 +23,7 @@ class App extends Component {
     })
   }
   
-  deleteCharHandler = (e, index) => {
+  deleteCharHandler = (index) => {
     let inputString = [...this.state.inputString]
     inputString.splice(index,1)
     this.setState({
@@ -33,15 +33,15 @@ class App extends Component {
   }
 
   render() {
-    let inputString = [...this.state.inputString]
+    let inputString = [...this.state.inputString.split('')]
     return (
       <div className="App">
-        <header className="App-header">
+        <div className="input-box">
           <input type="text" onChange={this.onChangeHandler} value={this.state.inputString} />
           <p>The input is {this.state.inputLength} characters!</p>
           <ValidationComponent inputLength={this.state.inputLength} />
-          {inputString.splice('').map((char, index) => <CharComponent char={char} deleteChar={() => this.deleteCharHandler(index)} />)}
-        </header>
+        </div>
+        {inputString.map((char, index) => <CharComponent char={char} deleteChar={() => this.deleteCharHandler(index)} />)}
       </div>
     );
   }
